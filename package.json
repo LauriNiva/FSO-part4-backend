@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
     "build:ui": "rmdir build && cd ../FSO2020/osa3/part3-notes-frontend/ && npm run build --prod && cp -r build ../FSO-p3-notes-backend",
     "deploy": "git push heroku master",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
     "logs:prod": "heroku logs --tail",
     "lint": "eslint .",
-    "test": "jest --verbose"
+    "test": "cross-envN ODE_ENV=test jest --verbose --runInBand"
   },
   "author": "Lauri Niva",
   "license": "ISC",
