@@ -1,0 +1,16 @@
+GET http://localhost:3001/api/users
+
+###
+
+GET http://localhost:3001/api/notes
+
+###
+
+POST http://localhost:3001/api/notes
+content-type: application/json
+
+{
+  "content": "User id of the note creator is at the start sent along the request",
+  "important": true,
+  "userId": "60b46a83ad1ef9c05cfc7ab8"
+}
